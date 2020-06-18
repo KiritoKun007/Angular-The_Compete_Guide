@@ -1,0 +1,20 @@
+<p>{{ name | lowercase }}</p>
+<p>{{ name | uppercase }}</p>
+<p>{{ message | titlecase }}</p>
+<p>{{ name | slice:3:5 | uppercase }}</p>
+<p>{{ person | json }}</p>
+
+<p>{{ 5.678 | number:'1.2-3' }}</p>
+<p>{{ 5.678 | number:'3.4-5' }}</p>
+<p>{{ 5.678 | number:'3.1-2' }}</p>
+
+<p>{{ 0.025 | percent }}</p>
+<p>{{ 0.25 | currency }}</p>
+<p>{{ 0.25 | currency:'INR':'code' }}</p>
+
+<p>{{ date }}</p>
+<p>{{ date | date:'short' }}</p>
+<p>{{ date | date:'shortDate' }}</p>
+<p>{{ date | date:'shortTime' }}</p>
+
+<p>{{ date | date:'dd-MMM-y' }}</p>
