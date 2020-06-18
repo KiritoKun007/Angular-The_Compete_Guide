@@ -1,0 +1,44 @@
+<div class="interpolation">
+    <h5>Welcome {{ name }}</h5>
+    <h5>{{ 2 + 2 }}</h5>
+    <h5>{{ "Welcome " + name }}</h5>
+    <h5>{{ name.length }}</h5>
+    <h5>{{ name.toUpperCase() }}</h5>
+    <h5>{{ greetUser() }}</h5>
+    <h5>{{ siteUrl }}</h5>
+</div>
+
+<div class="property-binding">
+    <input bind-disabled='isDisabled' type="text" value="Ashish" />
+    <input [disabled]='isDisabled' type="text" value="Ashish" />
+    <input disabled='false' id='{{ myID }}' type="text" value="Ashish" />
+</div>
+
+<div class="class-binding">
+    <h5 class="text-special">Ashish Padhi</h5>
+    <h5 [class]="successClass">Varsha Sharma</h5>
+    <h5 class="text-special" [class]="successClass">Varsha Sharma</h5>
+    <h5 [class.text-danger]="hasError">Varsha Sharma</h5>
+    <h5 [ngClass]="messageClasses">Varsha Sharma</h5>
+</div>
+
+<div class="style-binding">
+    <h5 [style.color]="hasError ? 'red' : 'orange'">Style Binding</h5>
+    <h5 [style.color]="highlightColor">Style Binding 2</h5>
+    <h5 [ngStyle]="titleStyles">Style Binding 3</h5>
+</div>
+
+<div class="event-binding">
+    <button (click)="onClick($event)">Greet</button>
+    <h5>{{ greeting }}</h5>
+    <button (click)="greeting = 'SORRY, YOU R IN DA WRONG PLACE'">Greet</button>
+</div>
+
+<div class="template-reference-variable">
+    <input type="text" #myInput (change)="inputtedValue($event)" />
+    <button (click)="logMessage(myInput.value)">LOG</button>
+</div>
+
+<div class="two-way-binding">
+    <app-two-way-binding></app-two-way-binding>
+</div>

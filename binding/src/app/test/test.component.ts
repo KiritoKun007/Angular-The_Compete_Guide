@@ -2,68 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-test',
-  template: `
-    <div class="interpolation">
-      <h5>Welcome {{ name }}</h5>
-      <h5>{{ 2 + 2 }}</h5>
-      <h5>{{ "Welcome " + name }}</h5>
-      <h5>{{ name.length }}</h5>
-      <h5>{{ name.toUpperCase() }}</h5>
-      <h5>{{ greetUser() }}</h5>
-      <h5>{{ siteUrl }}</h5>
-    </div>
-
-    <div class="property-binding">
-      <input bind-disabled='isDisabled' type="text" value="Ashish" />
-      <input [disabled]='isDisabled' type="text" value="Ashish" />
-      <input disabled='false' id='{{ myID }}' type="text" value="Ashish" />
-    </div>
-
-    <div class="class-binding">
-      <h5 class="text-special">Ashish Padhi</h5>
-      <h5 [class]="successClass">Varsha Sharma</h5>
-      <h5 class="text-special" [class]="successClass">Varsha Sharma</h5>
-      <h5 [class.text-danger]="hasError" >Varsha Sharma</h5>
-      <h5 [ngClass]="messageClasses" >Varsha Sharma</h5>
-    </div>
-
-    <div class="style-binding">
-      <h5 [style.color]="hasError ? 'red' : 'orange'">Style Binding</h5>
-      <h5 [style.color]="highlightColor" >Style Binding 2</h5>
-      <h5 [ngStyle]="titleStyles" >Style Binding 3</h5>
-    </div>
-
-    <div class="event-binding">
-      <button (click)="onClick($event)">Greet</button>
-      <h5>{{ greeting }}</h5>
-      <button (click)="greeting = 'SORRY, YOU R IN DA WRONG PLACE'">Greet</button>
-    </div>
-
-    
-  `,
-    // styleUrls: ['./test.component.scss'],
-  styles: [`
-    div {
-      padding: 0 20px;
-    }
-
-    .property-binding {
-      display: flex;
-      flex-direction: column;
-    }
-    input {
-      margin: 5px auto;
-    }
-    .text-success {
-      color: green;
-    }
-    .text-danger {
-      color: red;
-    }
-    .text-special {
-      font-style: italic;
-    }
-  `]
+  templateUrl: `./test.component.html`,
+  styleUrls: ['./test.component.scss'],
 })
 
 export class TestComponent implements OnInit {
@@ -103,8 +43,16 @@ export class TestComponent implements OnInit {
     return 'Hello ' + this.name
   }
 
-  onClick = (event) => {
+  onClick = (event: any) => {
     console.log(event)
     this.greeting = 'WELCOME TO HELL!!!'
+  }
+
+  inputtedValue = (event: any) => {
+    console.log(event.target.value)
+  }
+
+  logMessage = (value: any) => {
+    console.log(value)
   }
 }
