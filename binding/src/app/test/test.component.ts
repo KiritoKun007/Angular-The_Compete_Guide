@@ -32,6 +32,14 @@ import { Component, OnInit } from '@angular/core';
       <h5 [style.color]="highlightColor" >Style Binding 2</h5>
       <h5 [ngStyle]="titleStyles" >Style Binding 3</h5>
     </div>
+
+    <div class="event-binding">
+      <button (click)="onClick($event)">Greet</button>
+      <h5>{{ greeting }}</h5>
+      <button (click)="greeting = 'SORRY, YOU R IN DA WRONG PLACE'">Greet</button>
+    </div>
+
+    
   `,
     // styleUrls: ['./test.component.scss'],
   styles: [`
@@ -84,6 +92,8 @@ export class TestComponent implements OnInit {
     fontStyle: 'italic'
   }
 
+  public greeting = ''
+
   constructor() { }
 
   ngOnInit(): void {
@@ -93,4 +103,8 @@ export class TestComponent implements OnInit {
     return 'Hello ' + this.name
   }
 
+  onClick = (event) => {
+    console.log(event)
+    this.greeting = 'WELCOME TO HELL!!!'
+  }
 }
