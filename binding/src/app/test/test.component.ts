@@ -19,18 +19,26 @@ import { Component, OnInit } from '@angular/core';
       <input disabled='false' id='{{ myID }}' type="text" value="Ashish" />
     </div>
 
-    <div>
+    <div class="class-binding">
       <h5 class="text-special">Ashish Padhi</h5>
       <h5 [class]="successClass">Varsha Sharma</h5>
       <h5 class="text-special" [class]="successClass">Varsha Sharma</h5>
       <h5 [class.text-danger]="hasError" >Varsha Sharma</h5>
-
       <h5 [ngClass]="messageClasses" >Varsha Sharma</h5>
+    </div>
 
+    <div class="style-binding">
+      <h5 [style.color]="hasError ? 'red' : 'orange'">Style Binding</h5>
+      <h5 [style.color]="highlightColor" >Style Binding 2</h5>
+      <h5 [ngStyle]="titleStyles" >Style Binding 3</h5>
     </div>
   `,
     // styleUrls: ['./test.component.scss'],
   styles: [`
+    div {
+      padding: 0 20px;
+    }
+
     .property-binding {
       display: flex;
       flex-direction: column;
@@ -61,12 +69,19 @@ export class TestComponent implements OnInit {
 
   // Class Binding
   public successClass = 'text-success'
-  public hasError = true
+  public hasError = false
   public isSpecial = true
   public messageClasses = {
     'text-success': !this.hasError,
     'text-danger': this.hasError,
     'text-special': this.isSpecial
+  }
+
+  // Style Binding
+  public highlightColor =  'orange'
+  public titleStyles = {
+    color: 'blue',
+    fontStyle: 'italic'
   }
 
   constructor() { }
