@@ -8,7 +8,8 @@ import { PipesComponent } from './pipes/pipes.component';
 import { ServicesComponent } from './services/services.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeService } from './employee.service';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { MessageComponent } from './message/message.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http'
     TestComponent,
     PipesComponent,
     ServicesComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
