@@ -1,0 +1,35 @@
+.navigate-btw-department {
+    display: flex;
+    margin: 10px 0;
+    p {
+        padding: 10px 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: cornsilk;
+        color: indianred;
+        font-weight: 600;
+        font-size: 13.33px;
+        cursor: pointer;
+        border-radius: 2px;
+        &:first-child {
+            margin-right: 10px;
+        }
+        &:hover {
+            color: cornsilk;
+            background-color: indianred;
+        }
+    }
+}
+
+.backBtn {
+    border: none;
+    background-color: cornsilk;
+    color: indianred;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover {
+        color: cornsilk;
+        background-color: indianred;
+    }
+}

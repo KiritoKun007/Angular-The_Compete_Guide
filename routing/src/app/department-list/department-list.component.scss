@@ -6,13 +6,30 @@ h5 {
     list-style: none;
     padding-left: 10px;
     li {
-        padding: 5px 0;
+        background-color: cornsilk;
+        color: indianred;
+        margin: 10px 0;
+        width: fit-content;
+        display: flex;
+        border-radius: 2px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
         &:hover {
             cursor: pointer;
             font-weight: bold;
         }
     }
     .badge {
-        margin-right: 1rem;
+        background-color: indianred;
+        color: cornsilk;
+        padding: 10px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+    }
+    p {
+        padding: 10px;
+    }
+    .selected {
+        font-weight: bold;
     }
 }
