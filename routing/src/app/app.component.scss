@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 25px;
+    h4 {
+        font-size: 20px;
+    }
+}
+
+nav {
+    padding: 10px 25px;
+    a {
+        padding: 10px;
+        margin-right: 20px;
+        text-decoration: none;
+        color: #aaa;
+        font-weight: 600;
+        border-radius: 2px;
+        background-color: #eee;
+        &:hover {
+            background-color: #ccc;
+            color: #31a2ffee;
+        }
+    }
+    .active {
+        background-color: #ccc;
+        color: #31a2ffee;
+    }
+}

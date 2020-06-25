@@ -1,0 +1,18 @@
+h5 {
+    font-size: 14px;
+}
+
+.items {
+    list-style: none;
+    padding-left: 10px;
+    li {
+        padding: 5px 0;
+        &:hover {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+    .badge {
+        margin-right: 1rem;
+    }
+}
