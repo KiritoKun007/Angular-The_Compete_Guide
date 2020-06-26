@@ -1,26 +1,9 @@
-.navigate-btw-department {
+.btn-container {
     display: flex;
     margin: 10px 0;
-    p {
-        padding: 10px 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: cornsilk;
-        color: indianred;
-        font-weight: 600;
-        font-size: 13.33px;
-        cursor: pointer;
-        border-radius: 2px;
-        &:first-child {
-            margin-right: 10px;
-        }
-        &:hover {
-            color: cornsilk;
-            background-color: indianred;
-        }
-    }
 }
 
-.backBtn {
+button {
     border: none;
     background-color: cornsilk;
     color: indianred;
@@ -31,5 +14,11 @@
     &:hover {
         color: cornsilk;
         background-color: indianred;
+    }
+    &:first-child {
+        margin-right: 10px;
+    }
+    &:focus {
+        outline: none;
     }
 }

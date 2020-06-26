@@ -22,7 +22,7 @@ export class DepartmentListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.route)
-    this.route.paramMap.subscribe((params: ParamMap) => {
+    this.route.queryParamMap.subscribe((params: ParamMap) => {
       console.log(params)
      let id = parseInt(params.get('id'))
 

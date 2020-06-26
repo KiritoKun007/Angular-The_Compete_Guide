@@ -2,9 +2,16 @@
     <!-- <p>department-detail works!</p> -->
     <h4>You selected the department with ID: {{departmentId}}</h4>
 
-    <div class="navigate-btw-department">
-        <p (click)="goPrevious()">Previous</p>
-        <p (click)="goNext()">Next</p>
+    <div class="btn-container">
+        <button (click)="showOverview()">Overview</button>
+        <button (click)="showContact()">Contact</button>
+    </div>
+
+    <router-outlet></router-outlet>
+
+    <div class="btn-container">
+        <button (click)="goPrevious()">Previous</button>
+        <button (click)="goNext()">Next</button>
     </div>
 
     <div>

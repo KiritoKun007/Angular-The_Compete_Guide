@@ -15,7 +15,7 @@ export class DepartmentDetailComponent implements OnInit {
   ngOnInit(): void {
     // let id = parseInt(this.route.snapshot.paramMap.get('id'))
     // this.departmentId = id
-
+    console.log(this.route.pathFromRoot)
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = parseInt(params.get('id'))
       this.departmentId = id
@@ -25,20 +25,36 @@ export class DepartmentDetailComponent implements OnInit {
   goPrevious() {
     let previousId = this.departmentId - 1
     // this.router.navigate(['/departments', previousId])
-    this.router.navigate([previousId], { relativeTo: this.route })
+    this.router.navigate(['/departments-list', previousId])
   }
 
   goNext() {
     let nextId = this.departmentId + 1
     // this.router.navigate(['/departments', nextId])
-    this.router.navigate([nextId], { relativeTo: this.route })
+    this.router.navigate(['/departments-list', nextId])
   }
 
   goToDepartments() {
     let selectedId = this.departmentId ? this.departmentId : null
 
     // this.router.navigate(['/departments', {id: selectedId}])
-    this.router.navigate(['../', {id: selectedId} ])
+    this.router.navigate(
+      ['../'], 
+      {
+        relativeTo: this.route , 
+        queryParams: { 
+          id: selectedId 
+        }, 
+        queryParamsHandling: 'merge' 
+      })
+  }
+
+  showContact() {
+    this.router.navigate(['contact'], { relativeTo: this.route })
+  }
+
+  showOverview() {
+    this.router.navigate(['overview'], { relativeTo: this.route })
   }
 
 }
